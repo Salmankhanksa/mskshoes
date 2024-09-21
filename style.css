@@ -1,0 +1,239 @@
+/* General Styles */
+body {
+    background-color: #0a0e27; /* Dark blue background */
+    color: #e0e6f8; /* Light blue text */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    background-color: #0a0e27;
+    padding: 20px 0;
+}
+
+header h1 {
+    color: #38b6ff; /* Neon blue */
+    font-size: 36px;
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #38b6ff; /* Neon blue */
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #fff; /* White on hover */
+}
+
+/* Banner Section */
+.banner {
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #0a0e27 30%, #1c2557 100%);
+}
+
+.banner h2 {
+    color: #38b6ff; /* Neon blue */
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.banner p {
+    color: #e0e6f8;
+    font-size: 18px;
+}
+
+/* Products Section */
+.products {
+    margin: 30px 0;
+    padding: 20px;
+}
+
+.products h2 {
+    color: #38b6ff; /* Neon blue */
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.product {
+    background-color: #141a3c; /* Darker blue */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+.product img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.product h3 {
+    color: #38b6ff; /* Neon blue */
+    margin: 10px 0;
+}
+
+.product p {
+    color: #e0e6f8;
+    font-size: 14px;
+}
+
+.product .price {
+    color: #38b6ff;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+/* Upload Section */
+.upload-section {
+    padding: 20px;
+    background-color: #0a0e27;
+    border-top: 1px solid #38b6ff;
+}
+
+.upload-section h2 {
+    color: #38b6ff;
+}
+
+.upload-section form label {
+    color: #e0e6f8;
+}
+
+.upload-section form input,
+.upload-section form textarea,
+.upload-section form button {
+    margin: 10px 0;
+    padding: 10px;
+    width: 80%;
+    max-width: 400px;
+    border: 2px solid #38b6ff;
+    border-radius: 5px;
+    background-color: #141a3c; /* Darker blue */
+    color: #e0e6f8;
+}
+
+.upload-section form button {
+    background-color: #38b6ff;
+    color: #0a0e27;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.upload-section form button:hover {
+    background-color: #1f70aa;
+    color: #fff;
+}
+
+/* Footer */
+footer {
+    background-color: #0a0e27;
+    color: #38b6ff;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #38b6ff;
+}
+
+/* Product Grid Section */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.product {
+    background-color: #141a3c; /* Darker blue */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center; /* Center the content */
+}
+
+.product img {
+    max-width: 100%; /* Ensure the image does not exceed the container's width */
+    height: auto; /* Maintain the aspect ratio */
+    max-height: 200px; /* Set a max height for images */
+    object-fit: cover; /* Crop the image to fit nicely */
+    border-radius: 5px;
+}
+
+.product h3 {
+    color: #38b6ff; /* Neon blue */
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.product p {
+    color: #e0e6f8;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.product .price {
+    color: #38b6ff;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Product Grid Section */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 images per row */
+    gap: 20px; /* Spacing between images */
+    padding: 20px; /* Padding for the grid */
+}
+
+.product {
+    transition: transform 0.3s; /* Smooth transition for scaling */
+}
+
+.product:hover {
+    transform: scale(1.5); /* Scale up the entire product on hover */
+    z-index: 1; /* Bring the product above others */
+}
+
+.product img {
+    max-width: 100%; /* Ensure the image does not exceed the container's width */
+    height: auto; /* Maintain the aspect ratio */
+    max-height: 200px; /* Set a max height for images */
+    object-fit: cover; /* Crop the image to fit nicely */
+    border-radius: 5px;
+}
+
+.product h3,
+.product p,
+.product .price {
+    transition: transform 0.3s; /* Smooth transition for text scaling */
+}
+

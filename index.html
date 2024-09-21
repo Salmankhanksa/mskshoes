@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSK Shoes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to MSK Shoes</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner Section -->
+    <main>
+        <section class="banner">
+            <h2>Best Shoes for Every Occasion</h2>
+            <p>Shop the latest MSK Shoes collection now!</p>
+        </section>
+
+        <!-- Product Grid Section -->
+        <section class="products">
+            <h2>Our Products</h2>
+            <div class="product-grid">
+                <!-- Existing product items will go here -->
+            </div>
+        </section>
+
+        <!-- Upload Section -->
+        <section class="upload-section">
+            <h2>Upload New Shoe</h2>
+            <form id="uploadForm" enctype="multipart/form-data">
+                <label for="shoeName">Shoe Name:</label><br>
+                <input type="text" id="shoeName" name="shoeName" required><br><br>
+                
+                <label for="shoeDescription">Description:</label><br>
+                <textarea id="shoeDescription" name="shoeDescription" rows="4" required></textarea><br><br>
+                
+                <label for="shoePrice">Price:</label><br>
+                <input type="number" id="shoePrice" name="shoePrice" required><br><br>
+                
+                <label for="shoeImage">Upload Shoe Image:</label><br>
+                <input type="file" id="shoeImage" name="shoeImage" accept="image/*" required><br><br>
+                
+                <button type="button" onclick="uploadShoe()">Upload Shoe</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 MSK Shoes. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript Section -->
+    <script>
+        function uploadShoe() {
+            // Get form data
+            const shoeName = document.getElementById('shoeName').value;
+            const shoeDescription = document.getElementById('shoeDescription').value;
+            const shoePrice = document.getElementById('shoePrice').value;
+            const shoeImage = document.getElementById('shoeImage').files[0];
+
+            // Create a new product div
+            const productDiv = document.createElement('div');
+            productDiv.classList.add('product');
+
+            // Add the image
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                productDiv.appendChild(img);
+            };
+            reader.readAsDataURL(shoeImage);
+
+            // Add the name, description, and price
+            const nameElement = document.createElement('h3');
+            nameElement.textContent = shoeName;
+            productDiv.appendChild(nameElement);
+
+            const descriptionElement = document.createElement('p');
+            descriptionElement.textContent = shoeDescription;
+            productDiv.appendChild(descriptionElement);
+
+            const priceElement = document.createElement('p');
+            priceElement.textContent = `$${shoePrice}`;
+            productDiv.appendChild(priceElement);
+
+            // Add a Buy Now button
+            const button = document.createElement('button');
+            button.textContent = "Buy Now";
+            productDiv.appendChild(button);
+
+            // Append the new product to the product grid
+            document.querySelector('.product-grid').appendChild(productDiv);
+
+            // Reset the form
+            document.getElementById('uploadForm').reset();
+        }
+    </script>
+</body>
+</html>
